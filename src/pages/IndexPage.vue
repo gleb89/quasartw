@@ -1,7 +1,7 @@
 <template>
   <q-page style="padding: 1em" class="flex flex-center">
 
-
+gfgfgfg
     <p v-for="status in all_posts" :key="status" class="q-p-sm">
       status - {{status.descriptions}}
 
