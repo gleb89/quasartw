@@ -1,6 +1,6 @@
 <template>
   <q-page style="padding: 1em" class="flex flex-center">
-
+<button @click="OnTest">ff</button>
 gfgfgfg
     <p v-for="status in all_posts" :key="status" class="q-p-sm">
       status - {{status.descriptions}}
@@ -9,9 +9,10 @@ gfgfgfg
   </q-page>
 </template>
 
-<script>
+<!-- <script>
 import { defineComponent } from "vue";
 import { useStore } from 'vuex'
+import {OnTest} from '../use/user'
 
 export default defineComponent({
   preFetch({ store }) {
@@ -38,4 +39,19 @@ export default defineComponent({
 
   },
 });
+</script> -->
+
+<script>
+import { defineComponent } from "vue";
+import { useStore } from 'vuex'
+import {OnTest} from '../use/user'
+export default {
+  setup() {
+    return{
+
+        OnTest
+
+    }
+  },
+}
 </script>

@@ -106,6 +106,12 @@ export default  {
     components: {
     SearchAccount
   },
+  computed: {
+    property() {
+      return this.property;
+    },
+
+  },
   setup () {
     const $q = useQuasar()
     const leftDrawerOpen = ref(false)
