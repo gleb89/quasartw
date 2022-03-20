@@ -1,0 +1,1 @@
+quasar dev -m capacitor -T android
