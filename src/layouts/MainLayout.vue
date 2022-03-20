@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHr LpR lFr">
 
-    <q-header  v-if="!$q.screen.lt.lg || !$q.screen.lt.md "  elevated class="bg-white   text-black" height-hint="98">
+    <q-header reveal    elevated class="bg-white   text-black" height-hint="98">
       <q-toolbar >
 
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" class="q-mx-md lt-md" />
@@ -19,6 +19,7 @@
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+       <q-scroll-area class="fit">
       <q-item-section class="q-py-md">
         <a href="/">
           <img src="~assets/quasar-logo-vertical.svg" alt="twitter_icon" width="40" class="q-ml-lg" />
@@ -79,7 +80,7 @@
 
 
     </q-list>
-
+</q-scroll-area>
     </q-drawer>
 
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
@@ -104,13 +105,14 @@ export default  {
     SearchAccount
   },
   setup () {
-    const q = useQuasar()
+    const $q = useQuasar()
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
 
     return {
-      q,
-      leftDrawerOpen,
+      $q,
+      drawerLeft: ref($q.screen.width > 700),
+      drawerRight: ref($q.screen.width > 500),
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
