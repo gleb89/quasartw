@@ -1,7 +1,9 @@
 <template>
   <q-page style="padding: 1em" class="flex flex-center">
+    {{hh}}
+<button @click="Onbb">+1</button>
 <button @click="OnTest">ff</button>
-gfgfgfg
+gfgfgfg {{hh}}
     <p v-for="status in all_posts" :key="status" class="q-p-sm">
       status - {{status.descriptions}}
 
@@ -41,7 +43,7 @@ export default defineComponent({
 });2
 </script> -->
 
-<script>
+<!-- <script>
 import { defineComponent } from "vue";
 import { useStore } from 'vuex'
 import {OnTest} from '../use/user'
@@ -54,4 +56,18 @@ export default {
     }
   },
 }
+</script> -->
+<script setup>
+import { defineComponent } from "vue";
+import { useStore } from 'vuex'
+import {OnTest} from '../use/user'
+import { useQuasar } from 'quasar'
+import { ref, computed } from "vue";
+
+const stt = ref(1)
+const hh = computed(() => stt.value + 10);
+const Onbb  = () => {
+  stt.value ++
+}
+
 </script>
